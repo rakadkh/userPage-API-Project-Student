@@ -12,6 +12,31 @@
 </head>
 
 <body>
+    <script id="friends-template" type="text/x-handlebars-template">
+        <div>Friends</div>  
+        {{#each arr}}
+            <div>{{name.first}} {{name.last}}</div>
+            <br>
+          {{/each}}
+      </script>
+
+      <script id="user-template" type="text/x-handlebars-template">
+        <img id="profile-pic" src="{{picture.medium}}">
+        <div class="user-info"> {{name.first}} {{name.last}} 
+        <p> {{location.country}} {{location.city}}</p></div>
+    </script>
+
+    <script id="quote-template" type="text/x-handlebars-template">
+        <div>Favorite quote: <p>"{{quote}}." </p><p>- Kanye West</p></div>
+    </script>
+
+    <script id="pokemon-template" type="text/x-handlebars-template">
+        <img id="pokemon-image" src="{{sprites.front_shiny}}"><p id="pokemon-text">Favorite Pokemon: {{name}}</p>
+    </script>
+
+    <script id="content-template" type="text/x-handlebars-template">
+        <p class="meat-text">About me:<br> {{this}}</p>
+    </script>
     <div class="container">	
         <div class="user-container"></div>	
         <div class="quote-container"></div>	
@@ -25,10 +50,15 @@
             </div>	
         </div>	
         <div class="buttons">	
-            <button>Load User Data</button>	
-            <button>Display User</button>	
+            <button id="Load">Load User Data</button>	
+            <button id="Display">Display User</button>	
         </div>	
     </div>
-</body>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+  <script src="APIManager.js"></script>
+  <script src="Renderer.js"></script>
+  <script src="main.js"></script>
 
+</body>
 </html>
